@@ -19,5 +19,8 @@ print(df.dtypes)
 print(df["town"].nunique())   
 print(df["flat_type"].unique())
 '''
-
+df["month"] = pd.to_datetime(df["month"], format="%Y-%m")
+df["year"] = df["month"].dt.year
 df["price_per_sqm"] = df["resale_price"] / df["floor_area_sqm"]
+df["floor_area_sqm"] = pd.to_numeric(df["floor_area_sqm"], errors="coerce")
+df["resale_price"] = pd.to_numeric(df["resale_price"].astype(str), errors="coerce")
