@@ -24,3 +24,19 @@ df["year"] = df["month"].dt.year
 df["price_per_sqm"] = df["resale_price"] / df["floor_area_sqm"]
 df["floor_area_sqm"] = pd.to_numeric(df["floor_area_sqm"], errors="coerce")
 df["resale_price"] = pd.to_numeric(df["resale_price"].astype(str), errors="coerce")
+
+# Average price by town (most to least expensive)
+town_group = df.groupby("town")
+town_prices = town_group["resale_price"]
+avg_by_town = town_prices.mean().sort_values(ascending=False)
+
+
+# Average price by year
+year_group = df.groupby("year")
+avg_by_year = year_group["resale_price"].mean()
+
+
+# Average price by flat type
+avg_by_type = df.groupby("flat_type")["resale_price"].mean().sort_values()
+
+
