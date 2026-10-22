@@ -12,19 +12,19 @@ df = df.dropna(how="all")
 df["month"] = pd.to_datetime(df["month"])
 
 df["year"] = df["month"].dt.year
-'''
+
 print(df.isnull().sum())       
 print(df.duplicated().sum())   
 print(df.dtypes)               
 print(df["town"].nunique())   
 print(df["flat_type"].unique())
-'''
+
 df["month"] = pd.to_datetime(df["month"], format="%Y-%m")
 df["year"] = df["month"].dt.year
 df["price_per_sqm"] = df["resale_price"] / df["floor_area_sqm"]
 df["floor_area_sqm"] = pd.to_numeric(df["floor_area_sqm"], errors="coerce")
 df["resale_price"] = pd.to_numeric(df["resale_price"].astype(str), errors="coerce")
-'''
+
 # Average price by town (most to least expensive)
 town_group = df.groupby("town")
 town_prices = town_group["resale_price"]
@@ -85,7 +85,6 @@ plt.ylabel("Average resale price (S$)")
 plt.xticks(rotation=45, ha="right")
 plt.tight_layout()
 plt.show()
-'''
 
 #which towns grew fastest?# Filter to one flat type
 four_room = df[df["flat_type"] == "4 ROOM"]
@@ -113,5 +112,38 @@ plt.barh(x, y)
 plt.title("4 ROOM Resale Price Growth by Town, 2017 to 2025")
 plt.xlabel("Growth in average price (%)")
 plt.ylabel("Town")
+plt.tight_layout()
+plt.show()
+
+# whether lease period affects price increase 
+flats = df[(df["flat_type"] == "4 ROOM") & (df["town"] == "TAMPINES")].copy()
+
+lease_col = flats["lease_commence_data"]
+
+edges = [1970, 1980, 1990, 2000, 2010, 2020]
+labels = ["1970s", "1980s", "1990s", "2000s", "2010s"]
+
+flats["lease_era"] = pd.cut(lease_col, bins=edges, labels=labels, right=False)
+groups = flats.groupby(["lease_era", "year"])
+
+prices = groups["resale_price"]
+groups_lease_mean =prices.mean()
+tables = groups_lease_mean.unstack()
+
+# Define x and y
+x = tables.index.astype(str)
+y_2017 = tables[2017]
+y_2025 = tables[2025]
+
+plt.figure(figsize=(10, 6))
+
+plt.plot(x, y_2017, marker="o", label="2017")
+plt.plot(x, y_2025, marker="o", label="2025")
+
+plt.title("Tampines 4 ROOM: Average Resale Price by Lease Era")
+plt.xlabel("Lease commencement era")
+plt.ylabel("Average resale price (S$)")
+plt.legend(title="Year")
+plt.grid(alpha=0.3)
 plt.tight_layout()
 plt.show()
