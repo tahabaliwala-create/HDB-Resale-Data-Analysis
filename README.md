@@ -48,14 +48,6 @@ Fill these in with your own numbers after running the analysis.
 - Prices are affected by many things not in this dataset, such as floor level, renovation condition and market cycles. The results show associations, not proof that lease length causes price changes.
 - The 2017 to 2025 window is one choice of period, and other windows could give different results.
 
-## How to run
-
-```
-pip install pandas numpy matplotlib
-python main.py
-```
-
-Make sure `HDB_resale_price_data.csv` is in the same folder as `main.py`.
 
 ## Tools
 
