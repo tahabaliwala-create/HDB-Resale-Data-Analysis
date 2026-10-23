@@ -41,7 +41,7 @@ To compare towns fairly, this chart uses only 4 ROOM flats and compares 2017 wit
 
 ### 5. Does lease age matter? (Tampines, 4 ROOM)
 
-![Tampines 4 ROOM price by lease era](charts/Tampines 4 ROOM: Average Resale Price by Lease Era.png)
+![Tampines 4 ROOM price by lease era](charts/Tampines%204%20ROOM%20Average%20Resale%20Price%20by%20Lease%20Era.png)
 
 Flats with newer leases (2000s and 2010s) cost more than older ones in both years. Growth from 2017 to 2025 was roughly 43% for 1980s leases, 51% for 1990s leases, 46% for 2000s leases and 34% for 2010s leases.
 
