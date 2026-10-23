@@ -29,19 +29,19 @@ Every flat type follows the same pattern: flat or slightly falling prices from 2
 
 ### 3. Most expensive towns
 
-![Top 10 most expensive towns](charts/top_10_Most_Expensive_HDB_Towns.png)
+![Top 10 most expensive towns](charts/Top_10_Most_Expensive_HDB_Towns.png)
 
 Averaged over all years and flat types, Bukit Timah (about S$790,000), Bishan and Central Area are the most expensive towns. Tampines sits ninth. These averages mix flat types, so a town with more large flats will look more expensive, and this chart should not be read as a like-for-like comparison.
 
 ### 4. Price growth by town (4 ROOM only)
 
-![4 ROOM price growth by town](charts/Average_price_per_town_per_years..png)
+![4 ROOM price growth by town](charts/Average_price_per_town_per_year..png)
 
 To compare towns fairly, this chart uses only 4 ROOM flats and compares 2017 with 2025. Sembawang grew fastest (about 80%), followed by Woodlands, Hougang, Pasir Ris and Yishun (roughly 60 to 63%). The slowest growth was in Marine Parade (about 25%), Bukit Timah, Jurong East, Bukit Merah and Bishan. Many of the slowest-growing towns were already among the most expensive, which suggests that prices in cheaper towns caught up somewhat. Towns with few 4 ROOM sales (such as Marine Parade and Bukit Timah) can swing a lot, so their results are less certain. Tampines grew about 56%.
 
 ### 5. Does lease age matter? (Tampines, 4 ROOM)
 
-![Tampines 4 ROOM price by lease era](charts/Tampines 4 ROOM Average Resale Price by Lease Era.png)
+![Tampines 4 ROOM price by lease era](charts/Tampines 4 ROOM: Average Resale Price by Lease Era.png)
 
 Flats with newer leases (2000s and 2010s) cost more than older ones in both years. Growth from 2017 to 2025 was roughly 43% for 1980s leases, 51% for 1990s leases, 46% for 2000s leases and 34% for 2010s leases.
 
