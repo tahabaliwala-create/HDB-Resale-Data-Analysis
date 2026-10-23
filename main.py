@@ -1,7 +1,10 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from pathlib import Path
 
+charts_dir = Path("charts")
+charts_dir.mkdir(exist_ok=True)
 df = pd.read_csv("HDB Resale Price Data .csv")
 
 # print(df.columns.tolist())
@@ -46,6 +49,7 @@ x = avg_by_year.index
 y = avg_by_year.values
 
 plt.plot(x, y, marker="o")
+plt.savefig(charts_dir / "price_by_year.png", dpi=150, bbox_inches="tight")
 plt.show()
 
 trend_group = df.groupby(["year", "flat_type"])
@@ -62,6 +66,15 @@ x = trend_table.index
 for flat_type in trend_table.columns:
     y = trend_table[flat_type]
     plt.plot(x, y, marker="o", label=flat_type)
+plt.title("Average HDB Resale Price by Flat Type")
+plt.xlabel("Year")
+plt.ylabel("Average resale price (S$)")
+plt.legend(title="Flat type")
+plt.grid(alpha=0.3)
+plt.tight_layout()
+
+plt.savefig(charts_dir / "price_by_flat_type.png", dpi=150, bbox_inches="tight")
+plt.show()
 
 
 # which towns have the highest resale price 
@@ -84,6 +97,7 @@ plt.xlabel("Town")
 plt.ylabel("Average resale price (S$)")
 plt.xticks(rotation=45, ha="right")
 plt.tight_layout()
+plt.savefig(charts_dir / "Top_10_Most_Expensive_HDB_Towns", dpi=150, bbox_inches="tight")
 plt.show()
 
 #which towns grew fastest?# Filter to one flat type
@@ -113,6 +127,7 @@ plt.title("4 ROOM Resale Price Growth by Town, 2017 to 2025")
 plt.xlabel("Growth in average price (%)")
 plt.ylabel("Town")
 plt.tight_layout()
+plt.savefig(charts_dir / "Average_price_per_town_per_years", dpi=150, bbox_inches="tight")
 plt.show()
 
 # whether lease period affects price increase 
@@ -146,4 +161,5 @@ plt.ylabel("Average resale price (S$)")
 plt.legend(title="Year")
 plt.grid(alpha=0.3)
 plt.tight_layout()
-plt.show()
+plt.savefig(charts_dir / "Tampines 4 ROOM: Average Resale Price by Lease Era", dpi=150, bbox_inches="tight")
+plt.show() 
