@@ -35,7 +35,7 @@ Averaged over all years and flat types, Bukit Timah (about S$790,000), Bishan an
 
 ### 4. Price growth by town (4 ROOM only)
 
-![4 ROOM price growth by town](charts/Average_price_per_town_per_year..png)
+![4 ROOM price growth by town](charts/Average_price_per_town_per_years.png)
 
 To compare towns fairly, this chart uses only 4 ROOM flats and compares 2017 with 2025. Sembawang grew fastest (about 80%), followed by Woodlands, Hougang, Pasir Ris and Yishun (roughly 60 to 63%). The slowest growth was in Marine Parade (about 25%), Bukit Timah, Jurong East, Bukit Merah and Bishan. Many of the slowest-growing towns were already among the most expensive, which suggests that prices in cheaper towns caught up somewhat. Towns with few 4 ROOM sales (such as Marine Parade and Bukit Timah) can swing a lot, so their results are less certain. Tampines grew about 56%.
 
